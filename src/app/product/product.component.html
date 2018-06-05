@@ -1,0 +1,106 @@
+ <div *ngIf="flag" class="container" >
+  <div class="form-group" >
+
+   <label >Product Id</label>
+      <input class="form-control" type="number" [(ngModel)]="p_id" >
+
+      <label >Product Name</label>
+      <input class="form-control" type="number" [(ngModel)]="p_name" >
+
+
+   <label >Product Price</label>
+   <input class="form-control" type="number" [(ngModel)]="p_price" >
+
+
+   <label >Product Mfg</label>
+      <input class="form-control" type="number" [(ngModel)]="p_mfg" >
+
+
+   <label >Product Image</label>
+   <input class="form-control" type="number" [(ngModel)]="p_img " >
+
+
+</div>
+    <label >Product status</label>
+  <select class="form-control" [(ngModel)]="p_status" >
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </select>
+  <button (click)="onAdd()" class="btn btn-primary form-control " >Add Product</button>
+</div>
+<hr>
+<div class="container" >
+
+  <div  class="row" >
+    <nav  class="navbar navbar-inverse">
+      <div  class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">JV</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a (click)="onAdd1()">Add Product <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">About</a></li>
+
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div class="row" >
+
+    <div class="col-md-3" >
+      <ul   class="list-group">
+        <li class="list-group-item" >Electonics
+          <span class="badge" >10</span>
+        </li>
+        <li class="list-group-item" >Electonics
+          <span class="badge" >10</span>
+        </li>
+        <li class="list-group-item" >Electonics
+          <span class="badge" >10</span>
+        </li>
+        <li class="list-group-item" >Electonics
+          <span class="badge" >10</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+
+          <div *ngFor="let item of arr" class="col-sm-6 col-md-4">
+            <div class="thumbnail" style="background-color: lightgrey">
+              <div class="caption">
+                <h3>{{item.p_name}}</h3>
+                <p>{{item.p_price}}</p>
+                <p>{{item.p_status}}</p>
+                <button (click)="onDelete(item)" class="btn btn-default">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </button>
+
+                <button (click)="onUpdate(item)" class="btn btn-default">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+</div>
+
+  <div class="row" >
+    <nav class="navbar navbar-inverse"></nav>
+  </div>
+</div>

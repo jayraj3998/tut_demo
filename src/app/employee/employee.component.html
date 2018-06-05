@@ -1,0 +1,149 @@
+<h1 style="margin-left: 650px; font-family: Times New Roman; color: coral " ><b>EMPLOYEE</b></h1>
+<br>
+  <div *ngIf="flag" class="container">
+    <div class="form-group">
+
+      <label>Employee Id</label>
+      <input class="form-control" type="number" [(ngModel)]="e_id">
+
+      <label>Employee Name</label>
+      <input class="form-control" type="text" [(ngModel)]="e_name">
+
+
+      <label>Employee Designation</label>
+      <input class="form-control" type="text" [(ngModel)]="e_des">
+
+
+      <label>employee Salary</label>
+      <input class="form-control" type="number" [(ngModel)]="e_sal">
+
+    </div>
+    <label>Employee status</label>
+    <select class="form-control" [(ngModel)]="e_status">
+      <option value="yes">yes</option>
+      <option value="no">no</option>
+    </select>
+    <button (click)="onAdd()" class="btn btn-primary form-control ">Add</button>
+  </div>
+  <!-- <hr>
+<div class="container">
+  <table class="table">
+    <thead>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Employee Designation</th>
+      <th>Employee Salary</th>
+      <th>Status</th>
+    </thead>
+    <tr *ngFor="let item of arr">
+      <td>{{item.e_id}}</td>
+      <td>{{item.e_name}}</td>
+      <td>{{item.e_des}}</td>
+      <td>{{item.e_sal}}</td>
+      <td>
+        {{item.e_status}}
+      </td>
+      <td>
+        <button (click)="onDelete(item)" class="btn btn-default">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+
+        <button (click)="onUpdate(item)" class="btn btn-default">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div> -->
+<br><br><br>
+<br>
+
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid" style="background-color: lightblue">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+              aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bapu</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li >
+                <a style="font-size: 20px;"href="#" (click)="onadd1()"><b>Add Product</b>
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">ABOUT</a>
+              </li>
+
+            </ul>
+
+
+
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="list-group" >
+          <li class="list-group-item" style="color:darkblue">
+            <span class="badge" style="background-color: cornflowerblue">14</span>
+            <b>J V Bapu</b>
+          </li>
+        </ul>
+        <ul class="list-group">
+          <li class="list-group-item" style="color: darkblue">
+            <span class="badge" style="background-color: cornflowerblue">14</span>
+            <b>Umang</b>
+          </li>
+        </ul>
+        <ul class="list-group" >
+          <li class="list-group-item" style="color: darkblue">
+            <span class="badge" style="background-color: cornflowerblue">14</span>
+            <b>Sharmaji</b>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+
+          <div *ngFor="let item of arr" class="col-sm-6 col-md-4">
+            <div class="thumbnail" style="background-color: lightgrey">
+              <div class="caption">
+                <h3>{{item.e_name}}</h3>
+                <p>{{item.e_sal}}</p>
+                <p>{{item.e_status}}</p>
+                <button (click)="onDelete(item)" class="btn btn-default">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </button>
+
+                <button (click)="onUpdate(item)" class="btn btn-default">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <nav class="navbar "style="background-color:lightpink"></nav>
+    </div>
+  </div>
+
+

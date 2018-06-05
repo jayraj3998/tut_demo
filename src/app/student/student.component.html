@@ -1,0 +1,134 @@
+<h1 style="margin-left: 650px; font-family: Times New Roman; color: red " ><b>STUDENT</b></h1>
+<br>
+<br>
+<div *ngIf="flag" class="container">
+  <div class="main">
+    <table class="table">
+      <tr>
+        &nbsp;<td> id </td>
+        <td> <input [(ngModel)]="stuid" type="number"> </td>
+        </tr>
+
+        <tr>
+            &nbsp;<td> Name </td>
+            <td> <input [(ngModel)]="stuname" type="text"> </td>
+        </tr>
+        <br>
+        <tr>
+          &nbsp;<td> Gender </td>
+          <td>
+          <input [(ngModel)]="stugender" type="radio" value="male" name="rbtgender">male
+          <input [(ngModel)]="stugender" type="radio" value="female" name="rbtgender">female
+        </td>
+          </tr>
+          <br>
+          <tr>
+              &nbsp;<td> Phone </td>
+              <td> <input [(ngModel)]="stunumber" type="text"> </td>
+          </tr>
+          <br>
+          <tr>
+            &nbsp;<td>city</td>
+            <select [(ngModel)]="stucity1">
+              <option *ngFor="let item of stucity">{{item}}</option>
+            </select>
+            </tr>
+              <br>
+              <tr>
+              &nbsp;<td> Active </td>
+              <td>
+               <input [(ngModel)]="stuactive" type="radio" value="yes" name="rbtactive" >yes
+              <input [(ngModel)]="stuactive" type="radio" value="no" name="rbtactive" >no
+
+            </td>
+              </tr>
+                  <tr>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><input (click)="onadd()" type="button" value="ok"></td>
+                  </tr>
+    </table>
+  </div>
+  </div>
+  <!-- <div class="conatainer">
+      <table class="table" >
+          <thead>
+          <th>stuid</th>
+          <th>name</th>
+          <th>gender</th>
+          <th>number</th>
+          <th>city</th>
+          <th>active</th>
+
+        </thead>
+          <tr *ngFor="let item of arr">
+            <td>{{item.stuid}}</td>
+            <td>{{item.stuname}}</td>
+            <td>{{item.stugender}}</td>
+            <td>{{item.stunumber}}</td>
+            <td>{{item.stucity}}</td>
+            <td>{{item.stuactive}}</td>
+
+              <button (click)="ondelete(item)" class="btn btn-default" >
+                <span class="glyphicon glyphicon-trash" ></span>
+              </button>
+              |
+              <button (click)="onupdate(item)"class="btn btn-default" >
+                  <span class="glyphicon glyphicon-pencil" ></span>
+                </button>
+          </tr>
+
+      </table>
+      </div> -->
+      <br>
+      <br>
+      <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-default" >
+          <div class="container-fluid" style="background-color: lightpink">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">School</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#" (click)="onadd1()"><b> Add</b> <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">About</a></li>
+
+              </ul>
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+      </div>
+        <div class="row">
+        <div class="row">
+          <div *ngFor="let item of arr" class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                                <div class="caption">
+                                  <h3>{{item.stuname}}</h3>
+                                  <p>{{item.stuid}}</p>
+                                  <p>{{item.stuactive}}</p>
+                                  <button (click)="ondelete(item)" class="btn btn-default">
+                                      <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+
+                                    <button (click)="onupdate(item)" class="btn btn-default">
+                                      <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                  </div>
+                              </div>
+                  </div>
+               </div>
+               </div>
+      <div class="row">
+          <nav class="navbar "style="background-color:lightblue"></nav>
+      </div>
+      </div>
